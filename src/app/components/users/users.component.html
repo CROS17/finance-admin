@@ -1,0 +1,34 @@
+<div class="card">
+  <p>Bienvenido a Finance Control!</p>
+  <hr/>
+  <form [formGroup]="userForm" (ngSubmit)="addUser()" novalidate>
+    <div>
+      <label>Nombre: <span>*</span></label>
+      <br>
+      <input class="style-input" formControlName="name" type="text" placeholder="Ingrese su nombre" />
+    </div>
+    <div *ngIf="userForm.get('name')?.errors && userForm.get('name')?.dirty">
+      <p *ngIf="userForm.get('name')?.hasError('required')">Name is required</p>
+    </div>
+    <div>
+      <label>Correo: <span>*</span> </label>
+      <br>
+      <input class="style-input" formControlName="email" type="text" placeholder="Ingrese su correo electronico" />
+    </div>
+    <div *ngIf="userForm.get('email')?.errors && userForm.get('email')?.dirty">
+      <p *ngIf="userForm.get('email')?.hasError('required')">Email is required</p>
+    </div>
+    <div>
+      <label>Contraseña: <span>*</span> </label>
+      <br>
+      <input class="style-input" formControlName="password" type="text" placeholder="Ingrese su contraseña" />
+    </div>
+    <div *ngIf="userForm.get('password')?.errors && userForm.get('password')?.dirty">
+      <p *ngIf="userForm.get('password')?.hasError('required')">Password is required</p>
+    </div>
+    <br>
+    <div>
+      <button type="submit">Save</button>
+    </div>
+  </form>
+</div>
