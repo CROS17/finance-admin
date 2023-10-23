@@ -10,6 +10,7 @@ import { IncomesComponent } from './components/incomes/incomes.component';
 import { ExpensesComponent } from './components/expenses/expenses.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { DatatablesComponent } from './components/components/datatables/datatables.component';
+import { LoginComponent } from './components/auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DatatablesComponent } from './components/components/datatables/datatabl
     PersonsComponent,
     IncomesComponent,
     ExpensesComponent,
-    DatatablesComponent
+    DatatablesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

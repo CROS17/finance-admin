@@ -1,0 +1,28 @@
+<div class="card">
+  <p>INGRESO</p>
+  <hr/>
+  <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+    <div>
+      <label>Correo: <span>*</span> </label>
+      <br>
+      <input class="style-input" formControlName="email" type="text" placeholder="Ingrese su correo electronico" />
+    </div>
+    <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.dirty">
+      <p *ngIf="loginForm.get('email')?.hasError('required')">Email is required</p>
+    </div>
+    <div>
+      <label>Contraseña: <span>*</span> </label>
+      <br>
+      <input class="style-input" formControlName="password" type="password" placeholder="Ingrese su contraseña" />
+    </div>
+    <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.dirty">
+      <p *ngIf="loginForm.get('password')?.hasError('required')">Password is required</p>
+    </div>
+    <br>
+    <div>
+      <button (click)="logout()" type="button" class="btn btn-danger">Logout</button>
+      <button type="submit">Ingresar</button>
+    </div>
+  </form>
+</div>
+
