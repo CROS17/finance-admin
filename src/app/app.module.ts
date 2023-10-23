@@ -9,6 +9,7 @@ import { PersonsComponent } from './components/persons/persons.component';
 import { IncomesComponent } from './components/incomes/incomes.component';
 import { ExpensesComponent } from './components/expenses/expenses.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { DatatablesComponent } from './components/components/datatables/datatables.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     UsersComponent,
     PersonsComponent,
     IncomesComponent,
-    ExpensesComponent
+    ExpensesComponent,
+    DatatablesComponent
   ],
   imports: [
     BrowserModule,

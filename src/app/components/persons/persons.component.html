@@ -1,1 +1,46 @@
 <p>persons works!</p>
+<div class="card">
+  <h3>COMPLETE SU PERFIL!</h3>
+  <hr/>
+  <form [formGroup]="personForm" (ngSubmit)="addPerson()" novalidate>
+    <div>
+      <label>Nombres: <span>*</span></label>
+      <br>
+      <input class="style-input" formControlName="name" type="text" placeholder="Ingrese sus nombres" />
+    </div>
+    <div *ngIf="personForm.get('name')?.errors && personForm.get('name')?.dirty">
+      <p *ngIf="personForm.get('name')?.hasError('required')">Name is required</p>
+    </div>
+    <br>
+    <div>
+      <label>Apellidos: <span>*</span></label>
+      <br>
+      <input class="style-input" formControlName="last_name" type="text" placeholder="Ingrese sus apellidos" />
+    </div>
+    <div *ngIf="personForm.get('last_name')?.errors && personForm.get('last_name')?.dirty">
+      <p *ngIf="personForm.get('last_name')?.hasError('required')">Last Name is required</p>
+    </div>
+    <br>
+    <div>
+      <label>Ingresos: <span>*</span></label>
+      <br>
+      <input class="style-input" formControlName="total_income" type="text" placeholder="Ingrese su total de ingresos" />
+    </div>
+    <div *ngIf="personForm.get('total_income')?.errors && personForm.get('total_income')?.dirty">
+      <p *ngIf="personForm.get('total_income')?.hasError('required')">Amount Income is required</p>
+    </div>
+    <br>
+    <div>
+      <label>Egresos: <span>*</span></label>
+      <br>
+      <input class="style-input" formControlName="total_expense" type="text" placeholder="Ingrese su total de gastos" />
+    </div>
+    <div *ngIf="personForm.get('total_expense')?.errors && personForm.get('total_expense')?.dirty">
+      <p *ngIf="personForm.get('total_expense')?.hasError('required')">Amount Expense is required</p>
+    </div>
+    <br>
+    <div>
+      <button type="submit">Update</button>
+    </div>
+  </form>
+</div>

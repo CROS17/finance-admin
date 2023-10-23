@@ -1,0 +1,36 @@
+.card {
+  background-color: #e0e0e0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center; /* Para centrar el contenido horizontalmente */
+  margin: 0 auto; /* Para centrar el contenido en el centro de la pantalla */
+  max-width: 400px; /* Ancho máximo del card */
+}
+
+form {
+  text-align: left; /* Reinicia el texto a la izquierda dentro del formulario */
+}
+
+.style-input {
+  border: 1px solid #ccc; /* Añade un borde a los input */
+  border-radius: 5px;
+  padding: 8px;
+  margin: 5px;
+}
+
+/* Estilos para el botón "Save" */
+button[type="submit"] {
+  background-color: #4CAF50; /* Color verde (estilo "success") */
+  color: white; /* Texto en blanco */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049; /* Cambia el color cuando se pasa el mouse */
+}
