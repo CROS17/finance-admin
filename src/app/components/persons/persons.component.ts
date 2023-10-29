@@ -12,13 +12,12 @@ import {Person} from "../../interfaces/person";
 export class PersonsComponent implements OnInit {
   personForm: FormGroup;
   id: number;
-  user_id: number;
 
   constructor(
     private fb: FormBuilder,
     private _personService: PersonService,
     private router: Router,
-    private aRouter: ActivatedRoute
+    private aRouter: ActivatedRoute,
   ){
     this.personForm = fb.group({
       name: ['', [Validators.required]],
@@ -27,13 +26,11 @@ export class PersonsComponent implements OnInit {
       total_expense: ['', [Validators.required]],
     })
     this.id = Number(aRouter.snapshot.paramMap.get('id'));
-    this.user_id = 1;
   }
 
   ngOnInit(){
     console.log("hola", this.id);
     if(this.id != 0){
-      console.log("getPerson");
       this.getPerson(this.id);
     }
   }
@@ -65,10 +62,10 @@ export class PersonsComponent implements OnInit {
       console.log("editar");
     }else{
       /*add*/
+      console.log("guardar",person );
       this._personService.savePerson(person).subscribe((res: any)=>{
         console.log("rpta",res);
         const newPersonId = res.id;
-        //this.router.navigate(['perfil/'+newPersonId])
       })
     }
   }

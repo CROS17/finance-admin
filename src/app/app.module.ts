@@ -11,6 +11,10 @@ import { ExpensesComponent } from './components/expenses/expenses.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { DatatablesComponent } from './components/components/datatables/datatables.component';
 import { LoginComponent } from './components/auth/login/login.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { ProfileComponent } from './components/persons/profile/profile.component';
+import { PersonFormComponent } from './components/persons/person-form/person-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { LoginComponent } from './components/auth/login/login.component';
     IncomesComponent,
     ExpensesComponent,
     DatatablesComponent,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent,
+    FooterComponent,
+    ProfileComponent,
+    PersonFormComponent
   ],
   imports: [
     BrowserModule,
