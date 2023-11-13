@@ -15,6 +15,9 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ProfileComponent } from './components/persons/profile/profile.component';
 import { PersonFormComponent } from './components/persons/person-form/person-form.component';
+import { PageComponent } from './components/page/page.component';
+import { IncomeFormComponent } from './components/incomes/income-form/income-form.component';
+import { IncomeComponent } from './components/incomes/income/income.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { PersonFormComponent } from './components/persons/person-form/person-for
     NavbarComponent,
     FooterComponent,
     ProfileComponent,
-    PersonFormComponent
+    PersonFormComponent,
+    PageComponent,
+    IncomeFormComponent,
+    IncomeComponent
   ],
   imports: [
     BrowserModule,

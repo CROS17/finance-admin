@@ -24,9 +24,9 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(){
 
-    if(this.id != 0) {
+    //if(this.id != 0) {
       this.getPerson(this.id);
-    }
+    //}
 
   }
 
