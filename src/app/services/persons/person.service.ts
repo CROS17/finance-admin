@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {Person} from "../../interfaces/person";
 import {environment} from "../../../environments/enviroment";
 import {UserService} from "../users/user.service";
+import {AuthService} from "../auth/auth.service";
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,7 @@ export class PersonService {
 
   constructor(
     private http: HttpClient,
+    private authService: AuthService,
     private _userService: UserService,
   ) {
     this.myAppUrl = environment.endpoint;
@@ -22,11 +24,8 @@ export class PersonService {
   }
 
   savePerson(person: Person): Observable<void> {
-    const token = localStorage.getItem('token');
-    console.log("token", token);
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}`
-    });
+
+    const headers = new HttpHeaders(this.authService.getHeaders());
 
     return this.http.post<void>(
       `${this.myAppUrl}${this.myApiUrl}`,
@@ -36,11 +35,8 @@ export class PersonService {
   }
 
   getPersonById(id: number): Observable<Person> {
-    const token = localStorage.getItem('token');
-    console.log("token", token);
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}`
-    });
+    const headers = new HttpHeaders(this.authService.getHeaders());
+
     return this.http.get<Person>(
       `${this.myAppUrl}${this.myApiUrl}`,
       { headers }
